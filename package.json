@@ -11,14 +11,21 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.12",
+    "@mui/material": "^5.15.12",
+    "@prisma/client": "^5.10.2",
     "next": "12.0.10",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-markdown": "8.0.0"
+    "react-markdown": "8.0.0",
+    "vercel": "^33.5.3"
   },
   "devDependencies": {
     "@types/node": "17.0.14",
     "@types/react": "17.0.38",
+    "prisma": "^5.10.2",
     "typescript": "4.5.5"
   }
 }

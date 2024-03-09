@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import Header from "./Header";
+import Footer from "./Footer";
 
 type Props = {
   children: ReactNode;
@@ -9,7 +10,12 @@ const Layout: React.FC<Props> = (props) => (
   <div>
     <Header />
     <div className="layout">{props.children}</div>
+    <Footer/>
     <style jsx global>{`
+      *{
+        padding: 0;
+        margin: 0;
+      }
       html {
         box-sizing: border-box;
       }

@@ -2,6 +2,14 @@ import React from "react"
 import { GetStaticProps } from "next"
 import Layout from "../components/Layout"
 import Post, { PostProps } from "../components/Post"
+import prisma from "../prisma/lib/prisma"
+
+//material ui imports:
+import { Typography, Container, Box, useMediaQuery, Button, Grid, Paper, Card, CardContent } from "@mui/material"
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import XIcon from '@mui/icons-material/X';
+import theme from "../styles/Theme"
 
 export const getStaticProps: GetStaticProps = async () => {
   const feed = [
@@ -26,35 +34,194 @@ type Props = {
   feed: PostProps[]
 }
 
-const Blog: React.FC<Props> = (props) => {
+const Home: React.FC<Props> = (props) => {
   return (
     <Layout>
-      <div className="page">
-        <h1>Public Feed</h1>
-        <main>
-          {props.feed.map((post) => (
-            <div key={post.id} className="post">
-              <Post post={post} />
-            </div>
-          ))}
-        </main>
-      </div>
-      <style jsx>{`
-        .post {
-          background: white;
-          transition: box-shadow 0.1s ease-in;
-        }
+      <Box sx={{ width: '100%', minHeight: '800px', overflow: 'hidden', position: 'absolute', top: '0', left: '0', zIndex: '-90', padding: '0px',  margin: '0px', backgroundImage: `linear-gradient(
+      45deg,
+      hsl(195deg 100% 60%) 0%,
+      hsl(197deg 100% 68%) 11%,
+      hsl(199deg 100% 73%) 22%,
+      hsl(201deg 100% 78%) 33%,
+      hsl(203deg 100% 81%) 44%,
+      hsl(205deg 100% 85%) 56%,
+      hsl(207deg 98% 88%) 67%,
+      hsl(208deg 93% 90%) 78%,
+      hsl(210deg 82% 93%) 89%,
+      hsl(212deg 63% 95%) 100%
+    )`,}}>
+      
+      </Box>
+      <Container maxWidth="lg" disableGutters={useMediaQuery(theme.breakpoints.down('lg'))} sx={{zIndex:'1'}} >
+        {/* Hero section */}
+        <Container >
+            <Box maxWidth={'sm'} minHeight={'600px'} sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center'
+            }}>
+              <Typography variant="h1">I'm Abdellah Amini Alaoui</Typography>
+              <Typography variant="body1" sx={{margin: theme.spacing(1,0)}}>I’m a dedicated software developer who thrives on problem-solving and tackling challenges head-on. With a strong foundation in several programming languages and web development technologies, I’m always ready to dive into code to create innovative solutions.</Typography>
 
-        .post:hover {
-          box-shadow: 1px 1px 3px #aaa;
-        }
+              <Box sx={{
+                display: 'flex',
+                margin: theme.spacing(2, 0)
+              }}>
+                <Button variant="contained" sx={{}}>see work</Button>
+                <Button variant="outlined">get in touch</Button>
+              </Box>
+            </Box>
+        </Container>
+        {/* Services & social links section */}
+        <Container disableGutters>
+          <Box>
+            <Grid container  justifyContent={'center'}>
+              <Grid item xs={12} lg={6}  sx={{
+                margin: theme.spacing(2),
+                padding: '40px 16px',
+                background: 'rgba(0, 0, 0, 0.2)',
+                borderRadius: '16px',
+                boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+                backdropFilter: 'blur(5px)',
+                WebkitBackdropFilter: 'blur(5px)',
+                border: '1px solid rgba(0, 0, 0, 0.3)',
+              }}>
+                <Typography variant="h3">Services</Typography>
+                <Box>
+                  <Grid container spacing={2} justifyContent="center">
+                    <Grid item xs={12} sm={6} lg={6} >
+                      <Card>
+                        <CardContent>
+                          <Box>
+                            <Typography variant="h5">Service 1</Typography>
+                            <Typography variant="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, dolore ipsam illo voluptatum ratione iusto!</Typography>
+                          </Box>
+                          <Box>
+                            <Button variant="contained" sx={{fontSize: '.75rem'}}>Discover more</Button>
+                          </Box>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                    <Grid item xs={12} sm={6} lg={6} >
+                      <Card>
+                        <CardContent>
+                          <Box>
+                            <Typography variant="h5">Service 1</Typography>
+                            <Typography variant="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, dolore ipsam illo voluptatum ratione iusto!</Typography>
+                          </Box>
+                          <Box>
+                            <Button variant="contained" sx={{fontSize: '.75rem'}}>Discover more</Button>
+                          </Box>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                    <Grid item xs={12} sm={6} lg={6} >
+                      <Card>
+                        <CardContent>
+                          <Box>
+                            <Typography variant="h5">Service 1</Typography>
+                            <Typography variant="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, dolore ipsam illo voluptatum ratione iusto!</Typography>
+                          </Box>
+                          <Box>
+                            <Button variant="contained" sx={{fontSize: '.75rem'}}>Discover more</Button>
+                          </Box>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                    <Grid item xs={12} sm={6} lg={6} >
+                      <Card>
+                        <CardContent>
+                          <Box>
+                            <Typography variant="h5">Service 1</Typography>
+                            <Typography variant="caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, dolore ipsam illo voluptatum ratione iusto!</Typography>
+                          </Box>
+                          <Box>
+                            <Button variant="contained" sx={{fontSize: '.75rem'}}>Discover more</Button>
+                          </Box>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                  </Grid>
+                </Box>
+              </Grid>
+              <Grid item xs={12} lg={5}  sx={{
+                margin: theme.spacing(2),
+                padding: '40px 16px',
+                background: 'rgba(0, 0, 0, 0.2)',
+                borderRadius: '16px',
+                boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+                backdropFilter: 'blur(5px)',
+                WebkitBackdropFilter: 'blur(5px)',
+                border: '1px solid rgba(0, 0, 0, 0.3)',
+              }}>
+                <Typography variant="h3">Follow me on</Typography>
+                <Box>
+                  <Grid container spacing={2} >
+                    <Grid item xs={12} sm={6} lg={6} >
+                      <Card>
+                        <CardContent>
+                          <Box sx={{display: 'flex'}}>
+                            <GitHubIcon/>
+                            <Typography variant="h5">/Github</Typography>
+                          </Box>
+                          <Box sx={{display: 'flex', flexDirection: 'column', marginY: '8px'}}>
+                            <Typography variant="caption">1k stars</Typography>
+                            <Typography variant="caption">1k followers</Typography>
+                          </Box>
+                          <Box>
+                            <Button variant="contained" sx={{fontSize: '.75rem'}}>Follow</Button>
+                          </Box>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                    <Grid item xs={12} sm={6} lg={6} >
+                      <Card>
+                        <CardContent>
+                          <Box sx={{display: 'flex'}}>
+                            <LinkedInIcon/>
+                            <Typography variant="h5">/LinkedIn</Typography>
+                          </Box>
+                          <Box sx={{display: 'flex', flexDirection: 'column', marginY: '8px'}}>
+                            <Typography variant="caption">1k stars</Typography>
+                            <Typography variant="caption">1k followers</Typography>
+                          </Box>
+                          <Box>
+                          <Button variant="contained" sx={{fontSize: '.75rem'}}>Follow</Button>
+                          </Box>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                    <Grid item xs={12} sm={6} lg={6} >
+                      <Card>
+                        <CardContent>
+                          <Box sx={{display: 'flex'}}>
+                            <XIcon/>
+                            <Typography variant="h5"> / Twitter</Typography>
+                          </Box>
+                          <Box sx={{display: 'flex', flexDirection: 'column', marginY: '8px'}}>
+                            <Typography variant="caption">1k stars</Typography>
+                            <Typography variant="caption">1k followers</Typography>
+                          </Box>
+                          <Box>
+                            <Button variant="contained" sx={{fontSize: '.75rem'}}>Follow</Button>
+                          </Box>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                  </Grid>
+                </Box>
+              </Grid>
+            </Grid>
+          </Box>
+        </Container>
 
-        .post + .post {
-          margin-top: 2rem;
-        }
-      `}</style>
+        {/* Featured work section */}
+        <Container disableGutters sx={{marginTop: '40px'}}>
+          <Typography variant="h2">Featured work</Typography>
+        </Container>
+      </Container>
     </Layout>
   )
 }
 
-export default Blog
+export default Home
