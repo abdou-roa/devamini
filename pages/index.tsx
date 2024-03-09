@@ -41,19 +41,21 @@ const Home: React.FC<Props> = (props) => {
   const isSmall : Boolean = useMediaQuery(theme.breakpoints.up('sm'))
   return (
     <Layout>
-      <Box sx={{ width: '100%', minHeight: '800px', overflow: 'hidden', position: 'absolute', top: '0', left: '0', zIndex: '-90', padding: '0px',  margin: '0px', backgroundImage: `linear-gradient(
-      45deg,
-      hsl(195deg 100% 60%) 0%,
-      hsl(197deg 100% 68%) 11%,
-      hsl(199deg 100% 73%) 22%,
-      hsl(201deg 100% 78%) 33%,
-      hsl(203deg 100% 81%) 44%,
-      hsl(205deg 100% 85%) 56%,
-      hsl(207deg 98% 88%) 67%,
-      hsl(208deg 93% 90%) 78%,
-      hsl(210deg 82% 93%) 89%,
-      hsl(212deg 63% 95%) 100%
-    )`,}}>
+      <Box sx={{ width: '100%', minHeight: '800px', overflow: 'hidden', position: 'absolute', top: '0', left: '0', zIndex: '-90', padding: '0px',  margin: '0px',
+        backgroundImage: `linear-gradient(
+          45deg,
+  hsl(341deg 49% 78%) 0%,
+  hsl(321deg 47% 79%) 11%,
+  hsl(285deg 50% 81%) 22%,
+  hsl(249deg 89% 87%) 33%,
+  hsl(219deg 100% 84%) 44%,
+  hsl(201deg 100% 77%) 56%,
+  hsl(191deg 100% 69%) 67%,
+  hsl(186deg 100% 59%) 78%,
+  hsl(181deg 94% 54%) 89%,
+  hsl(171deg 94% 63%) 100%
+        )`
+      }}>
       
       </Box>
       <Container maxWidth="lg" disableGutters={useMediaQuery(theme.breakpoints.down('lg'))} sx={{zIndex:'1'}} >
@@ -77,13 +79,13 @@ const Home: React.FC<Props> = (props) => {
             </Box>
         </Container>
         {/* Services & social links section */}
-        <Container disableGutters>
+        <Container disableGutters sx={{marginTop: '-50px'}}>
           <Box>
             <Grid container  justifyContent={'center'}>
               <Grid item xs={12} lg={6}  sx={{
                 margin: theme.spacing(2),
                 padding: '40px 16px',
-                background: 'rgba(0, 0, 0, 0.2)',
+                background: 'rgba(128, 128, 128, 0.2)',
                 borderRadius: '16px',
                 boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
                 backdropFilter: 'blur(5px)',
@@ -151,7 +153,7 @@ const Home: React.FC<Props> = (props) => {
               <Grid item xs={12} lg={5}  sx={{
                 margin: theme.spacing(2),
                 padding: '40px 16px',
-                background: 'rgba(0, 0, 0, 0.2)',
+                background: 'rgba(128, 128, 128, 0.2)',
                 borderRadius: '16px',
                 boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
                 backdropFilter: 'blur(5px)',

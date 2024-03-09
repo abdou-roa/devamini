@@ -49,6 +49,7 @@ const Layout: React.FC<Props> = (props) => (
       .layout {
         padding: 0 2rem;
       }
+
     `}</style>
   </div>
 );
