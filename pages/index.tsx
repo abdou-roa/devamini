@@ -10,6 +10,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 import theme from "../styles/Theme"
+import CardMedia from '@mui/material/CardMedia';
+import { CardActionArea, CardActions } from '@mui/material';
 
 export const getStaticProps: GetStaticProps = async () => {
   const feed = [
@@ -84,13 +86,13 @@ const Home: React.FC<Props> = (props) => {
                 boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
                 backdropFilter: 'blur(5px)',
                 WebkitBackdropFilter: 'blur(5px)',
-                border: '1px solid rgba(0, 0, 0, 0.3)',
+                //border: '1px solid rgba(0, 0, 0, 0.3)',
               }}>
-                <Typography variant="h3">Services</Typography>
+                <Typography variant="h3" sx={{marginBottom: '16px'}}>Services</Typography>
                 <Box>
                   <Grid container spacing={2} justifyContent="center">
                     <Grid item xs={12} sm={6} lg={6} >
-                      <Card>
+                      <Card elevation={4} sx={{borderRadius: '8px'}}>
                         <CardContent>
                           <Box>
                             <Typography variant="h5">Service 1</Typography>
@@ -103,7 +105,7 @@ const Home: React.FC<Props> = (props) => {
                       </Card>
                     </Grid>
                     <Grid item xs={12} sm={6} lg={6} >
-                      <Card>
+                      <Card elevation={4} sx={{borderRadius: '8px'}}>
                         <CardContent>
                           <Box>
                             <Typography variant="h5">Service 1</Typography>
@@ -116,7 +118,7 @@ const Home: React.FC<Props> = (props) => {
                       </Card>
                     </Grid>
                     <Grid item xs={12} sm={6} lg={6} >
-                      <Card>
+                      <Card elevation={4} sx={{borderRadius: '8px'}}>
                         <CardContent>
                           <Box>
                             <Typography variant="h5">Service 1</Typography>
@@ -129,7 +131,7 @@ const Home: React.FC<Props> = (props) => {
                       </Card>
                     </Grid>
                     <Grid item xs={12} sm={6} lg={6} >
-                      <Card>
+                      <Card elevation={4} sx={{borderRadius: '8px'}}>
                         <CardContent>
                           <Box>
                             <Typography variant="h5">Service 1</Typography>
@@ -152,13 +154,13 @@ const Home: React.FC<Props> = (props) => {
                 boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
                 backdropFilter: 'blur(5px)',
                 WebkitBackdropFilter: 'blur(5px)',
-                border: '1px solid rgba(0, 0, 0, 0.3)',
+                //border: '1px solid rgba(0, 0, 0, 0.3)',
               }}>
-                <Typography variant="h3">Follow me on</Typography>
+                <Typography variant="h3" sx={{marginBottom: '16px'}}>Follow me on</Typography>
                 <Box>
                   <Grid container spacing={2} >
                     <Grid item xs={12} sm={6} lg={6} >
-                      <Card>
+                      <Card elevation={4} sx={{borderRadius: '8px'}}>
                         <CardContent>
                           <Box sx={{display: 'flex'}}>
                             <GitHubIcon/>
@@ -175,7 +177,7 @@ const Home: React.FC<Props> = (props) => {
                       </Card>
                     </Grid>
                     <Grid item xs={12} sm={6} lg={6} >
-                      <Card>
+                      <Card elevation={4} sx={{borderRadius: '8px'}}>
                         <CardContent>
                           <Box sx={{display: 'flex'}}>
                             <LinkedInIcon/>
@@ -192,7 +194,7 @@ const Home: React.FC<Props> = (props) => {
                       </Card>
                     </Grid>
                     <Grid item xs={12} sm={6} lg={6} >
-                      <Card>
+                      <Card elevation={4} sx={{borderRadius: '8px'}}>
                         <CardContent>
                           <Box sx={{display: 'flex'}}>
                             <XIcon/>
@@ -217,8 +219,96 @@ const Home: React.FC<Props> = (props) => {
 
         {/* Featured work section */}
         <Container disableGutters sx={{marginTop: '40px'}}>
-          <Typography variant="h2">Featured work</Typography>
+          <Typography variant="h3" sx={{marginBottom: '16px'}}>Featured work</Typography>
+          <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%'}}>
+            <Grid container spacing={2} sx={{marginX:'auto'}}>
+                <Grid item xs={12} sm={6} lg={4}>
+                  <Card elevation={6}  sx={{padding: '8px', borderRadius: '8px'}}>
+                    <CardActionArea>
+                      <CardMedia
+                        component="img"
+                        height="140"
+                        image="/static/images/default.webp"
+                        alt="green iguana"
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                          Lizard
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Lizards are a widespread group of squamate reptiles, with over 6,000
+                          species, ranging across all continents except Antarctica
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                      <Button size="small" variant="contained">
+                        Share
+                      </Button>
+                    </CardActions>
+                  </Card>
+                </Grid>
+                <Grid item xs={12} sm={6} lg={4} >
+                <Card elevation={6} sx={{padding: '8px', borderRadius: '8px'}}>
+                    <CardActionArea>
+                      <CardMedia
+                        component="img"
+                        height="140"
+                        image="/static/images/default.webp"
+                        alt="green iguana"
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                          Lizard
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Lizards are a widespread group of squamate reptiles, with over 6,000
+                          species, ranging across all continents except Antarctica
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                      <Button size="small" variant="contained">
+                        Share
+                      </Button>
+                    </CardActions>
+                  </Card>
+                </Grid>
+                <Grid item xs={12} sm={6} lg={4}>
+                <Card elevation={6} sx={{padding: '8px', borderRadius: '8px'}}>
+                    <CardActionArea>
+                      <CardMedia
+                        component="img"
+                        height="140"
+                        image="/static/images/default.webp"
+                        alt="green iguana"
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                          Lizard
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Lizards are a widespread group of squamate reptiles, with over 6,000
+                          species, ranging across all continents except Antarctica
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                      <Button size="small" variant="contained">
+                        Share
+                      </Button>
+                    </CardActions>
+                  </Card>
+                </Grid>
+            </Grid>
+            <Box sx={{paddingY: '24px', display: 'flex', justifyContent: 'center'}}>
+              <Button variant="contained">Discover more</Button>
+            </Box>
+          </Box>
         </Container>
+
+        {/* Latest articles section */}
+              
       </Container>
     </Layout>
   )

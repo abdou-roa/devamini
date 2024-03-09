@@ -31,7 +31,13 @@ function Header() {
 
 
   return (
-    <AppBar position="static" style={{background: 'none', boxShadow: 'none'}}>
+    <AppBar position="static" style={{
+      background: 'rgba(0, 0, 0, 0.2)',
+      boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+      backdropFilter: 'blur(5px)',
+      WebkitBackdropFilter: 'blur(5px)',
+      
+    }}>
         <Container maxWidth="lg">
           <Toolbar disableGutters>
             
