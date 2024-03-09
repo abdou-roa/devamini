@@ -5,7 +5,7 @@ import Post, { PostProps } from "../components/Post"
 import prisma from "../prisma/lib/prisma"
 
 //material ui imports:
-import { Typography, Container, Box, useMediaQuery, Button, Grid, Paper, Card, CardContent } from "@mui/material"
+import { Typography, Container, Box, useMediaQuery, Button, Grid, Paper, Card, CardContent, Link } from "@mui/material"
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
@@ -38,7 +38,7 @@ type Props = {
 
 
 const Home: React.FC<Props> = (props) => {
-  const isMedium : Boolean = useMediaQuery(theme.breakpoints.up('md'))
+  const isSmall : Boolean = useMediaQuery(theme.breakpoints.up('sm'))
   return (
     <Layout>
       <Box sx={{ width: '100%', minHeight: '800px', overflow: 'hidden', position: 'absolute', top: '0', left: '0', zIndex: '-90', padding: '0px',  margin: '0px', backgroundImage: `linear-gradient(
@@ -223,7 +223,7 @@ const Home: React.FC<Props> = (props) => {
         <Container disableGutters sx={{marginTop: '40px'}}>
           <Typography variant="h3" sx={{marginBottom: '16px'}}>Featured work</Typography>
           <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%'}}>
-            <Grid container rowSpacing={2} columnSpacing={isMedium?2:0} sx={{marginX:'auto'}}>
+            <Grid container rowSpacing={2} columnSpacing={isSmall?2:0} sx={{marginX:'auto'}}>
                 <Grid item xs={12} sm={6} lg={4}>
                   <Card elevation={6}  sx={{padding: '8px', borderRadius: '8px'}}>
                     <CardActionArea>
@@ -313,7 +313,7 @@ const Home: React.FC<Props> = (props) => {
         <Container disableGutters sx={{marginTop: '40px'}}>
           <Typography variant="h3" sx={{marginBottom: '16px'}}>Featured articles</Typography>
           <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%'}}>
-            <Grid container rowSpacing={2} columnSpacing={isMedium?2:0} sx={{marginX:'auto'}}>
+            <Grid container rowSpacing={2} columnSpacing={isSmall?2:0} sx={{marginX:'auto'}}>
                 <Grid item xs={12} sm={6} lg={4}>
                   <Card elevation={6}  sx={{padding: '8px', borderRadius: '8px'}}>
                     <CardActionArea>
@@ -396,6 +396,33 @@ const Home: React.FC<Props> = (props) => {
             <Box sx={{paddingY: '24px', display: 'flex', justifyContent: 'center'}}>
               <Button variant="contained">Explore articles</Button>
             </Box>
+          </Box>
+        </Container>
+
+        {/* Open source section */}
+
+        <Container disableGutters sx={{marginTop: '40px'}}>
+          <Typography variant="h3" sx={{marginBottom: '16px'}}>Open source</Typography>
+          <Box>
+            <Grid container>
+              <Grid item xs={12} sm={6} lg={4}>
+                <Link href="#">
+                  <Card variant="outlined" sx={{ borderRadius: '8px'}}>
+                  <CardContent>
+                    <Typography variant="h5" color="text.secondary" sx={{'&:hover':{textDecoration: 'underline'}}} gutterBottom>
+                      boilerplate
+                    </Typography>
+                    <Typography variant="body2" sx={{fontSize:'12px'}} gutterBottom>A Robust Foundation for Feature-rich Laravel Web Applications</Typography>
+                    <Typography variant="caption" sx={{fontSize: '9px'}}>php - Docker</Typography>
+                    <Box sx={{display: 'flex', justifyContent: 'space-around'}}>
+                      <Typography variant="body2">7 forks</Typography>
+                      <Typography variant="body2">9 stars</Typography>
+                    </Box>
+                  </CardContent>
+                  </Card>
+                </Link>
+              </Grid>
+            </Grid>
           </Box>
         </Container>
       </Container>
