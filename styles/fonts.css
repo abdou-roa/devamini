@@ -1,0 +1,18 @@
+/* styles/fonts.css */
+
+/* Roboto Slab */
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('../fonts/roboto-slab.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Lato */
+  @font-face {
+    font-family: 'Lato';
+    src: url('../fonts/lato.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
