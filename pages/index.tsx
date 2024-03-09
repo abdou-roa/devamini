@@ -36,7 +36,9 @@ type Props = {
   feed: PostProps[]
 }
 
+
 const Home: React.FC<Props> = (props) => {
+  const isMedium : Boolean = useMediaQuery(theme.breakpoints.up('md'))
   return (
     <Layout>
       <Box sx={{ width: '100%', minHeight: '800px', overflow: 'hidden', position: 'absolute', top: '0', left: '0', zIndex: '-90', padding: '0px',  margin: '0px', backgroundImage: `linear-gradient(
@@ -221,7 +223,7 @@ const Home: React.FC<Props> = (props) => {
         <Container disableGutters sx={{marginTop: '40px'}}>
           <Typography variant="h3" sx={{marginBottom: '16px'}}>Featured work</Typography>
           <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%'}}>
-            <Grid container spacing={2} sx={{marginX:'auto'}}>
+            <Grid container rowSpacing={2} columnSpacing={isMedium?2:0} sx={{marginX:'auto'}}>
                 <Grid item xs={12} sm={6} lg={4}>
                   <Card elevation={6}  sx={{padding: '8px', borderRadius: '8px'}}>
                     <CardActionArea>
@@ -308,7 +310,94 @@ const Home: React.FC<Props> = (props) => {
         </Container>
 
         {/* Latest articles section */}
-              
+        <Container disableGutters sx={{marginTop: '40px'}}>
+          <Typography variant="h3" sx={{marginBottom: '16px'}}>Featured articles</Typography>
+          <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%'}}>
+            <Grid container rowSpacing={2} columnSpacing={isMedium?2:0} sx={{marginX:'auto'}}>
+                <Grid item xs={12} sm={6} lg={4}>
+                  <Card elevation={6}  sx={{padding: '8px', borderRadius: '8px'}}>
+                    <CardActionArea>
+                      <CardMedia
+                        component="img"
+                        height="140"
+                        image="/static/images/default.webp"
+                        alt="green iguana"
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                          Lizard
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Lizards are a widespread group of squamate reptiles, with over 6,000
+                          species, ranging across all continents except Antarctica
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                      <Button size="small" variant="contained">
+                        Read more
+                      </Button>
+                    </CardActions>
+                  </Card>
+                </Grid>
+                <Grid item xs={12} sm={6} lg={4} >
+                <Card elevation={6} sx={{padding: '8px', borderRadius: '8px'}}>
+                    <CardActionArea>
+                      <CardMedia
+                        component="img"
+                        height="140"
+                        image="/static/images/default.webp"
+                        alt="green iguana"
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                          Lizard
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Lizards are a widespread group of squamate reptiles, with over 6,000
+                          species, ranging across all continents except Antarctica
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                      <Button size="small" variant="contained">
+                        Read more
+                      </Button>
+                    </CardActions>
+                  </Card>
+                </Grid>
+                <Grid item xs={12} sm={6} lg={4}>
+                <Card elevation={6} sx={{padding: '8px', borderRadius: '8px'}}>
+                    <CardActionArea>
+                      <CardMedia
+                        component="img"
+                        height="140"
+                        image="/static/images/default.webp"
+                        alt="green iguana"
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                          Lizard
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          Lizards are a widespread group of squamate reptiles, with over 6,000
+                          species, ranging across all continents except Antarctica
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                      <Button size="small" variant="contained">
+                        Read more
+                      </Button>
+                    </CardActions>
+                  </Card>
+                </Grid>
+            </Grid>
+            <Box sx={{paddingY: '24px', display: 'flex', justifyContent: 'center'}}>
+              <Button variant="contained">Explore articles</Button>
+            </Box>
+          </Box>
+        </Container>
       </Container>
     </Layout>
   )
