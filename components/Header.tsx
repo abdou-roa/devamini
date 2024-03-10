@@ -16,7 +16,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['About', 'Work', 'Blog'];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -120,13 +120,15 @@ function Header() {
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               <Container disableGutters sx={{display: 'flex', justifyContent: 'flex-end', marginLeft: 'auto'}}>
                 {pages.map((page) => (
-                  <Button
-                    key={page}
-                    onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: theme=>theme.palette.text.primary, display: 'block'}}
-                  >
-                    {page}
-                  </Button>
+                  <Link href="/about">
+                    <Button
+                      key={page}
+                      onClick={handleCloseNavMenu}
+                      sx={{ my: 2, color: theme=>theme.palette.text.primary, display: 'block'}}
+                    >
+                      {page}
+                    </Button>
+                  </Link>
                 ))}
               </Container>
             </Box>

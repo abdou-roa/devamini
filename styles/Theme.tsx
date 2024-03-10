@@ -61,7 +61,7 @@ const theme = createTheme({
       body1: {
         fontFamily: 'Lato',
         fontWeight: 400,
-        fontSize: '1.15rem',
+        fontSize: '1.1rem',
         lineHeight: 1.6, // Adjust line height as needed
      },
     },
