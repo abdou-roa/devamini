@@ -9,15 +9,15 @@ const NavBar: React.FC = () => {
     return(
         <Container disableGutters  sx={{minWidth: '100vw', backgroundColor: '#fff',  boxSizing: 'border-box', marginTop: '64px', paddingTop: '40px'}}>
             <Container maxWidth="lg">
-                <Grid container>
-                    <Grid item xs={12} sm={6} lg={4} sx={{ color: 'black', display: 'flex', justifyContent:{ xs: 'start', lg:'center'}}}>
+                <Grid container rowGap={3}>
+                    <Grid item xs={12} sm={6}  sx={{ color: 'black', display: 'flex', justifyContent: 'start'}}>
                         <Box>
                             <Typography variant="h2">Devamini</Typography>
                             <Typography variant="body1" sx={{maxWidth:'300px', fontSize: '16px'}}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis iste facere sapiente eaque, ipsa ea.</Typography>
                         </Box>
                     </Grid>
-                    <Grid item  xs={12} sm={6} lg={4}>
-                        <Grid container  columnGap={6}>
+                    <Grid item  xs={12} sm={6} >
+                        <Grid container sx={{ color: 'black', justifyContent: { xs: 'start', sm:'end'}}}  columnGap={6}>
                             <Grid item sx={{ color: 'black', display: 'flex', justifyContent:{ xs: 'start', lg:'center'}}}>
                                 <Box>
                                     <Typography variant="h3" >General</Typography>
