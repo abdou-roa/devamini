@@ -120,7 +120,7 @@ function Header() {
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               <Container disableGutters sx={{display: 'flex', justifyContent: 'flex-end', marginLeft: 'auto'}}>
                 {pages.map((page) => (
-                  <Link href="/about">
+                  <Link href={`${page.toLowerCase()}`} key={page} >
                     <Button
                       key={page}
                       onClick={handleCloseNavMenu}

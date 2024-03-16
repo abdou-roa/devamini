@@ -33,7 +33,7 @@ const About: React.FC = (props) => {
                 <Container sx={{padding: '40px', minHeight: '300px'}}>
                     <Typography variant="h1" textAlign='center'>About me</Typography>
                 </Container>
-                <Container>
+                <Container disableGutters>
                     <Grid container  sx={{marginTop: '-120px'}}>
                         <Grid item xs={12} md={4} sx={{display: 'flex', alignItems: 'flex-start', justifyContent: 'center'}} className={style.container}>
                             <img src="/static/images/picOfme.jpeg" className={style.myImage} alt="a picture of me standing in front of a palm tree"/>
